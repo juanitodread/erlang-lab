@@ -18,6 +18,6 @@ get_file(Server, File) ->
 put_file(Server, File, Content) ->
   Server ! {self(), {put_file, File, Content}},
   receive
-    _ -> % TODO: This is a placeholder to match any result. This should change to match OK pattern
+    {Server, ok} -> % TODO: This is a placeholder to match any result. This should change to match OK pattern
       "File was created"
   end.
